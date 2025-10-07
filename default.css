@@ -694,6 +694,10 @@ a {
     box-shadow: 0 8px 25px rgba(0, 170, 255, 0.3);
 }
 
+:target {
+  scroll-margin-top: 82px; /* khoảng cách muốn chừa phía trên */
+}
+
 .cta-button {
     display: inline-block;
     padding: 0.9rem 2rem;
