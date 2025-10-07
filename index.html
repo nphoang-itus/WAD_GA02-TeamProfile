@@ -11,18 +11,21 @@
 </head>
 <body>
     <header class="main-header">
-        <div class="container navbar">
-            <!-- Menu bên trái -->
-            <ul class="nav-menu">
+        <div class="container">
+            <!-- MỚI: Toàn bộ thanh điều hướng giờ nằm trong một list duy nhất -->
+            <ul class="navbar">
+                <!-- Các link bên trái -->
                 <li><a href="#hero" class="active">Trang chủ</a></li>
                 <li><a href="#team">Members</a></li>
-            </ul>
-            <!-- Logo ở giữa -->
-            <a href="index.html" class="nav-brand">
-                <span>TamKaOnBar</span>
-            </a>
-            <!-- Menu bên phải -->
-            <ul class="nav-menu">
+
+                <!-- Logo ở giữa, đặt trong một li đặc biệt -->
+                <li class="nav-brand-li">
+                    <a href="index.html" class="nav-brand">
+                        <span>TamKaOnBar</span>
+                    </a>
+                </li>
+
+                <!-- Các link bên phải -->
                 <li><a href="#about">About us</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -47,19 +50,12 @@
                     
                     <!-- Cột ảnh bên trong card -->
                     <div class="hero-image">
-                        <img src="assets/images/group.jpg" alt="Ảnh nhóm TamKaOnBar" usemap="#team-map">
-                        <map name="team-map">
-                            <area shape="rect" coords="50,100,250,400" href="members/23120255/profile.html" alt="Thành viên 1">
-                            <area shape="rect" coords="300,100,500,400" href="members/23120262/profile.html" alt="Thành viên 2">
-                            <area shape="rect" coords="550,100,750,400" href="members/23120264/profile.html" alt="Thành viên 3">
-                        </map>
+                        <img src="assets/images/group.jpg" alt="Ảnh nhóm TamKaOnBar">
                         
-                        <!-- === DANH SÁCH ĐÃ ĐƯỢC DI CHUYỂN VÀO ĐÂY === -->
-                        <ul class="hero-features-list">
-                            <li>💡 Sáng tạo & Hiệu quả</li>
-                            <li>🤝 Hợp tác & Hỗ trợ</li>
-                            <li>🚀 Luôn học hỏi & Phát triển</li>
-                        </ul>
+                        <!-- MỚI: Các vùng link được đặt trực tiếp ở đây -->
+                        <a href="members/23120255/profile.html" class="image-map-link" style="left: 6.25%; top: 25%; width: 25%; height: 75%;" aria-label="Thành viên 1"></a>
+                        <a href="members/23120262/profile.html" class="image-map-link" style="left: 37.5%; top: 25%; width: 25%; height: 75%;" aria-label="Thành viên 2"></a>
+                        <a href="members/23120264/profile.html" class="image-map-link" style="left: 68.75%; top: 25%; width: 25%; height: 75%;" aria-label="Thành viên 3"></a>
                     </div>
                 </div>
             </div>
@@ -122,23 +118,40 @@
             <div class="container">
                 <!-- Container cho form để giới hạn chiều rộng và căn giữa -->
                 <div class="contact-form-container">
-                    <h2 class="contact-title">Contact</h2>
+                    <h2 class="contact-title">Liên hệ với chúng tôi</h2>
 
-                    <form action="#" method="POST" class="new-contact-form">
+                    <form id="portfolio-contact-form" class="new-contact-form">
                         <div class="form-group">
-                            <label for="name">Your Name</label>
-                            <input type="text" id="name" name="name" placeholder="What's your name?" required>
+                            <label for="name">Tên của bạn</label>
+                            <input type="text" id="name" name="name" placeholder="Bạn tên là gì?" required>
                         </div>
                         <div class="form-group">
-                            <label for="email">Your Email</label>
-                            <input type="email" id="email" name="email" placeholder="What's your email?" required>
+                            <label for="email">Email của bạn</label>
+                            <input type="email" id="email" name="email" placeholder="Email để chúng tôi liên lạc lại?" required>
                         </div>
                         <div class="form-group">
-                            <label for="message">Your Message</label>
-                            <textarea id="message" name="message" rows="5" placeholder="What do you want to say?" required></textarea>
+                            <label for="message">Lời nhắn</label>
+                            <textarea id="message" name="message" rows="5" placeholder="Bạn muốn nói gì với chúng tôi?" required></textarea>
                         </div>
                         
-                        <button type="submit" class="submit-btn-v2">Send</button>
+                        <!-- MỚI: Nhóm các nút gửi mail -->
+                        <div class="form-group">
+                            <label>Gửi đến:</label>
+                            <div class="contact-button-group">
+                                <!-- Nút cho thành viên 1 -->
+                                <button type="button" class="contact-send-btn" onclick="sendEmail('23120255@student.hcmus.edu.vn', 'Tống Dương Thái Hòa')">
+                                    Hịp
+                                </button>
+                                <!-- Nút cho thành viên 2 (Thay email và tên thật) -->
+                                <button type="button" class="contact-send-btn" onclick="sendEmail('23120262@student.hcmus.edu.vn', 'Tên Thành Viên 2')">
+                                    Tống Dương Thái Hòa
+                                </button>
+                                <!-- Nút cho thành viên 3 (Thay email và tên thật) -->
+                                <button type="button" class="contact-send-btn" onclick="sendEmail('23120264@student.hcmus.edu.vn', 'Tên Thành Viên 3')">
+                                    quàng
+                                </button>
+                            </div>
+                        </div>
                     </form>
                 </div>
             </div>
@@ -146,8 +159,39 @@
 
     </main>
 
-    <footer class="main-footer">
-        <p>&copy; 2025 - Bài tập Phát triển ứng dụng Web - Nhóm TamKaOnBar</p>
     </footer>
+
+    <!-- Thư viện Image Map Resizer (giữ nguyên) -->
+    <script src="https://cdn.jsdelivr.net/npm/image-map-resizer@1.0.10/js/imageMapResizer.min.js"></script>
+    <script>
+        imageMapResize();
+    </script>
+    
+    <!-- === MỚI: JAVASCRIPT CHO FORM LIÊN HỆ === -->
+    <script>
+        function sendEmail(recipientEmail, recipientName) {
+            // Lấy các giá trị từ form
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const message = document.getElementById('message').value.trim();
+
+            // Kiểm tra xem các trường có được điền đầy đủ không
+            if (!name || !email || !message) {
+                alert('Vui lòng điền đầy đủ thông tin vào form!');
+                return; // Dừng hàm nếu form chưa hoàn chỉnh
+            }
+
+            // Tạo tiêu đề và nội dung email
+            const subject = `Tin nhắn từ Portfolio của ${name}`;
+            const body = `Chào ${recipientName},%0D%0A%0D%0ABạn có một tin nhắn mới từ trang portfolio của nhóm:%0D%0A%0D%0A---%0D%0A${message}%0D%0A---%0D%0A%0D%0AGửi từ:%0D%0ATên: ${name}%0D%0AEmail: ${email}`;
+
+            // Tạo và mở liên kết mailto:
+            const mailtoLink = `mailto:${recipientEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            
+            // Mở ứng dụng mail mặc định của người dùng
+            window.location.href = mailtoLink;
+        }
+    </script>
+    
 </body>
 </html>

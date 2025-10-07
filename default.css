@@ -30,6 +30,7 @@ body {
     color: var(--text-light);
     line-height: 1.7;
     overflow-x: hidden;
+    padding-top: 85px;
 }
 
 .container {
@@ -44,9 +45,11 @@ a {
 }
 
 /* --- Header & Navigation --- */
+/* Sửa đổi quy tắc này */
 .main-header {
     padding: 1rem 0;
-    position: sticky;
+    position: fixed;
+    width: 100%;    
     top: 0;
     z-index: 100;
     background-color: rgba(10, 15, 31, 0.95);
@@ -56,9 +59,13 @@ a {
 }
 
 .navbar {
+    list-style: none;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 1rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .nav-brand {
@@ -112,35 +119,47 @@ a {
 
 /* --- Homepage Styles --- */
 .hero-section {
-    padding: 6rem 0 4rem;
+    padding: 6rem 0;
+    background: linear-gradient(135deg, var(--bg-dark) 0%, #111e3b 100%);
+    position: relative;
+    overflow: hidden;
 }
 
 .hero-section .container {
     max-width: 90%;
 }
 
-/* SỬA ĐỔI QUY TẮC NÀY */
 .hero-card {
     display: grid;
     grid-template-columns: 1fr 1fr; 
     align-items: center;
-    
-    /* === THÊM VÀO === */
-    background: var(--bg-card);
-    border: 1px solid var(--border-glow);
+    background: transparent;
+    border: none;
     border-radius: var(--border-radius);
-    overflow: hidden; /* Quan trọng: để bo góc hoạt động đúng */
-    box-shadow: var(--glow-shadow);
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
     transition: var(--transition);
-    
-    /* === XÓA BỎ === */
-    /* gap: 3rem;  <-- Xóa hoặc đặt thành 0 */
 }
 
-/* === THÊM QUY TẮC HOVER MỚI CHO TOÀN BỘ CARD === */
 .hero-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 0 35px rgba(0, 170, 255, 0.3);
+    transform: translateY(-10px);
+    box-shadow: 0 25px 60px rgba(0, 170, 255, 0.3);
+}
+
+.hero-card:hover .hero-image img {
+    transform: scale(1.05);
+}
+
+.hero-text {
+    padding: 3rem;
+    text-align: left;
+    background-color: rgba(17, 24, 39, 0.6);
+    backdrop-filter: blur(15px);
+    border-right: 1px solid var(--border-glow);
+    height: 100%; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .hero-title {
@@ -172,29 +191,80 @@ a {
     }
 }
 
-.image-map-container {
-    border: 2px solid var(--border-glow);
-    border-radius: var(--border-radius);
-    overflow: hidden;
-    box-shadow: var(--glow-shadow);
-    margin: 0 auto;
-    max-width: 900px;
+.cta-button {
+    display: inline-block;
+    padding: 0.9rem 2rem;
+    background: linear-gradient(135deg, var(--accent-glow), var(--accent-green));
+    color: var(--bg-dark);
+    font-weight: 700;
+    font-size: 1rem;
+    border-radius: 8px;
+    text-decoration: none;
     transition: var(--transition);
-    animation: fadeInUp 0.8s ease-out 0.4s backwards;
+    border: none;
+    margin-top: 2rem; 
+    align-self: flex-start;
 }
 
-.image-map-container:hover {
-    box-shadow: 0 0 30px rgba(0, 170, 255, 0.4);
-    transform: translateY(-5px);
+.cta-button:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(0, 170, 255, 0.4);
 }
 
-.image-map-container img {
+.hero-image {
     width: 100%;
+    position: relative;
+    overflow: hidden; 
+}
+
+.hero-image img {
     display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    object-position: center center;
+    transition: transform 0.4s ease-in-out;
+}
+
+.hero-features-list {
+    position: absolute; 
+    bottom: 2rem;       
+    left: 2rem;         
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;      
+    flex-wrap: wrap;    
+    gap: 1rem;          
+}
+
+.hero-features-list li {
+    background-color: rgba(17, 24, 39, 0.7); 
+    backdrop-filter: blur(10px); 
+    border: 1px solid var(--border-glow);
+    padding: 0.75rem 1.25rem;
+    border-radius: 50px; 
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-light);
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: var(--transition);
+    width: 15rem;
+    justify-content: center;
+}
+
+.hero-features-list li:hover {
+    transform: translateY(-5px);
+    background-color: rgba(17, 24, 39, 0.9);
+    border-color: var(--accent-glow);
+    box-shadow: 0 8px 25px rgba(0, 170, 255, 0.3);
 }
 
 /* --- Team Section --- */
-.team-section {
+#team {
     padding: 5rem 0;
 }
 
@@ -502,6 +572,35 @@ a {
 }
 
 /* --- Responsive Design --- */
+@media (max-width: 992px) {
+    .hero-card {
+        grid-template-columns: 1fr; 
+    }
+
+    .hero-text {
+        border-right: none;
+        border-bottom: 1px solid var(--border-glow);
+    }
+
+    .hero-image {
+        min-height: 450px;
+    }
+
+    .hero-features-list {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        left: 0;
+        bottom: 1.5rem;
+        padding: 0 1.5rem;
+    }
+
+    .hero-features-list li {
+        width: 100%;
+        max-width: 320px;
+    }
+}
+
 @media (max-width: 768px) {
     .hero-title {
         font-size: 2.5rem;
@@ -624,132 +723,96 @@ a {
     }
 }
 
-/* --- CSS cho Hero Image --- */
-.hero-image {
-    width: 100%;
-    height: 100%;
-    position: relative;
-    overflow: hidden; 
-}
+/* --- Responsive Design --- */
 
-.hero-image img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center center; 
-}
-
-/* --- Nâng cấp Hero Section --- */
-.hero-text {
-    padding: 2.5rem;
-    text-align: left;
-    border-right: 1px solid var(--border-glow);
-}
-
-.hero-text:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 0 35px rgba(0, 170, 255, 0.3);
-}
-
-/* === CSS CHO CÁC ELEMENT "TRÔI NỔI" === */
-.hero-features-list {
-    position: absolute; 
-    bottom: 2rem;       
-    left: 2rem;         
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;      
-    flex-wrap: wrap;    
-    gap: 1rem;          
-}
-
-.hero-features-list li {
-    background-color: rgba(17, 24, 39, 0.7); 
-    backdrop-filter: blur(10px); 
-    border: 1px solid var(--border-glow);
-    padding: 0.75rem 1.25rem;
-    border-radius: 50px; 
-    font-size: 0.9rem;
-    font-weight: 500;
-    color: var(--text-light);
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    transition: var(--transition);
-
-    /* === THÊM 2 DÒNG NÀY VÀO === */
-    width: 15rem; /* MỚI: Đặt chiều rộng cố định (bạn có thể điều chỉnh giá trị này) */
-    justify-content: center; /* MỚI: Căn giữa nội dung (icon và text) */
-}
-
-.hero-features-list li:hover {
-    transform: translateY(-5px);
-    background-color: rgba(17, 24, 39, 0.9);
-    border-color: var(--accent-glow);
-    box-shadow: 0 8px 25px rgba(0, 170, 255, 0.3);
-}
-
-.cta-button {
-    display: inline-block;
-    padding: 0.9rem 2rem;
-    background: linear-gradient(135deg, var(--accent-glow), var(--accent-green));
-    color: var(--bg-dark);
-    font-weight: 700;
-    font-size: 1rem;
-    border-radius: 8px;
-    text-decoration: none;
-    transition: var(--transition);
-    border: none;
-    /* Thêm margin-top để tạo khoảng cách sau khi dời list đi */
-    margin-top: 2rem; 
-}
-
-.cta-button:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 10px 30px rgba(0, 170, 255, 0.4);
-}
-
-/* --- Responsive cho Hero --- */
+/* Màn hình nhỏ (Tablet) */
 @media (max-width: 992px) {
     .hero-card {
         grid-template-columns: 1fr; 
-    }
-}
-
-/* --- Responsive cho Hero --- */
-@media (max-width: 992px) {
-    .hero-card {
-        grid-template-columns: 1fr; 
+        align-items: stretch;
     }
 
     .hero-text {
-        /* Khi xếp chồng, bỏ viền bên phải và thay bằng viền dưới để phân tách */
+        height: auto; /* Giữ lại thay đổi từ lần trước */
         border-right: none;
         border-bottom: 1px solid var(--border-glow);
     }
-
-    .hero-image {
-        /* Đặt chiều cao tối thiểu để ảnh không bị mất hoặc quá nhỏ trên di động */
-        min-height: 450px;
-    }
-
+    
     .hero-features-list {
-        /* Điều chỉnh lại vị trí và bố cục của danh sách "lơ lửng" */
-        flex-direction: column; /* Xếp các mục theo chiều dọc */
-        align-items: center;    /* Căn giữa các mục */
-        width: 100%;            /* Chiếm toàn bộ chiều rộng của container ảnh */
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
         left: 0;
         bottom: 1.5rem;
-        padding: 0 1.5rem;      /* Thêm khoảng đệm hai bên */
+        padding: 0 1.5rem;
+    }
+    .hero-features-list li {
+        width: 100%;
+        max-width: 320px;
+    }
+}
+
+/* Màn hình rất nhỏ (Mobile) */
+@media (max-width: 768px) {
+    body {
+        padding-top: 150px; 
     }
 
-    .hero-features-list li {
-        width: 100%;            /* Các mục sẽ chiếm chiều rộng tối đa */
-        max-width: 320px;       /* Giới hạn lại để không quá dài */
+    .navbar {
+        flex-direction: column;
+        gap: 0.5rem;
     }
+    .nav-brand-li {
+        order: -1; 
+    }
+    .navbar li a {
+        padding: 0.75rem 1rem;
+    }
+
+    .hero-title { font-size: 2.5rem; }
+    .hero-subtitle { font-size: 1rem; }
+    .member-name { font-size: 2.5rem; }
+    .section-title { font-size: 2rem; }
+    .team-grid { grid-template-columns: 1fr; }
+    .info-grid { grid-template-columns: 1fr; }
+    .contact-form-container { padding: 2.5rem; }
+    .contact-title { font-size: 2.5rem; }
+}
+
+/* --- CSS CHO IMAGE MAP RESPONSIVE MỚI --- */
+.hero-image {
+    position: relative; /* Bắt buộc để các link con có thể định vị theo */
+}
+
+.image-map-link {
+    position: absolute;
+    display: block;
+}
+
+/* --- Styling for New Contact Buttons --- */
+.contact-button-group {
+    display: flex;
+    flex-wrap: wrap; /* Cho phép các nút xuống dòng nếu không đủ chỗ */
+    gap: 1rem; /* Khoảng cách giữa các nút */
+    margin-top: 0.5rem;
+}
+
+.contact-send-btn {
+    flex-grow: 1; /* Các nút sẽ cố gắng chia đều không gian */
+    background: var(--accent-glow);
+    color: var(--bg-dark);
+    padding: 0.9rem 1.5rem;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    transition: var(--transition);
+    text-align: center;
+}
+
+.contact-send-btn:hover {
+    background: var(--accent-green);
+    transform: translateY(-3px);
+    box-shadow: 0 4px 15px rgba(57, 255, 20, 0.2);
 }
