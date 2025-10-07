@@ -113,7 +113,34 @@ a {
 /* --- Homepage Styles --- */
 .hero-section {
     padding: 6rem 0 4rem;
-    text-align: center;
+}
+
+.hero-section .container {
+    max-width: 90%;
+}
+
+/* SỬA ĐỔI QUY TẮC NÀY */
+.hero-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    align-items: center;
+    
+    /* === THÊM VÀO === */
+    background: var(--bg-card);
+    border: 1px solid var(--border-glow);
+    border-radius: var(--border-radius);
+    overflow: hidden; /* Quan trọng: để bo góc hoạt động đúng */
+    box-shadow: var(--glow-shadow);
+    transition: var(--transition);
+    
+    /* === XÓA BỎ === */
+    /* gap: 3rem;  <-- Xóa hoặc đặt thành 0 */
+}
+
+/* === THÊM QUY TẮC HOVER MỚI CHO TOÀN BỘ CARD === */
+.hero-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 35px rgba(0, 170, 255, 0.3);
 }
 
 .hero-title {
@@ -130,7 +157,7 @@ a {
     font-size: 1.25rem;
     color: var(--text-muted);
     max-width: 700px;
-    margin: 0 auto 3rem;
+    margin: 0 0 3rem 0; 
     animation: fadeInUp 0.8s ease-out 0.2s backwards;
 }
 
@@ -506,11 +533,11 @@ a {
 }
 
 .contact-form-container {
-    max-width: 700px; /* Giới hạn chiều rộng của form */
-    margin: 0 auto; /* Tự động căn giữa */
-    background-color: #111827; /* Màu nền cho khối form */
-    padding: 4rem; /* Khoảng đệm bên trong */
-    border-radius: 20px; /* Bo góc */
+    max-width: 700px; 
+    margin: 0 auto; 
+    background-color: #111827; 
+    padding: 4rem; 
+    border-radius: 20px; 
     border: 1px solid var(--border-glow);
     box-shadow: var(--glow-shadow);
 }
@@ -525,13 +552,12 @@ a {
 }
 
 .contact-title {
-    font-size: 3.5rem; /* Có thể điều chỉnh kích thước */
+    font-size: 3.5rem; 
     font-weight: 800;
     color: var(--text-light);
     margin-bottom: 2.5rem;
 }
 
-/* Style cho form bên trong khối */
 .new-contact-form .form-group {
     margin-bottom: 2rem;
 }
@@ -547,7 +573,7 @@ a {
 .new-contact-form .form-group input,
 .new-contact-form .form-group textarea {
     width: 100%;
-    background-color: #192133; /* Màu nền input đậm hơn */
+    background-color: #192133; 
     border: none;
     border-radius: 10px;
     padding: 1.25rem;
@@ -559,13 +585,13 @@ a {
 
 .new-contact-form .form-group input::placeholder,
 .new-contact-form .form-group textarea::placeholder {
-    color: #6b7280; /* Màu placeholder hơi xám */
+    color: #6b7280; 
 }
 
 .new-contact-form .form-group input:focus,
 .new-contact-form .form-group textarea:focus {
     outline: none;
-    box-shadow: 0 0 0 2px var(--accent-glow); /* Hiệu ứng focus */
+    box-shadow: 0 0 0 2px var(--accent-glow); 
 }
 
 .submit-btn-v2 {
@@ -588,7 +614,6 @@ a {
     box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
 }
 
-/* Responsive */
 @media (max-width: 768px) {
     .contact-form-container {
         padding: 2.5rem;
@@ -599,49 +624,29 @@ a {
     }
 }
 
-/* --- CSS cho Hero Image kích thước lớn --- */
-
-/* 1. Tạo một khung chứa (container) cho ảnh */
+/* --- CSS cho Hero Image --- */
 .hero-image {
     width: 100%;
-    /* Thiết lập chiều cao tương đối theo chiều rộng (ví dụ: tỷ lệ 16:9) */
-    /* padding-top: 56.25%; /* (9 / 16 * 100) */
-    /* Hoặc đặt một chiều cao cố định và responsive */
-    height: 60vh; /* Cao bằng 60% chiều cao màn hình */
-    max-height: 500px; /* Chiều cao tối đa, tránh quá cao trên màn hình dài */
+    height: 100%;
     position: relative;
-    border-radius: var(--border-radius);
-    overflow: hidden; /* Quan trọng: Ẩn các phần ảnh bị thừa */
-    box-shadow: var(--glow-shadow);
-    border: 2px solid var(--border-glow);
+    overflow: hidden; 
 }
 
-/* 2. Style cho thẻ <img> bên trong khung chứa */
 .hero-image img {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    
-    /* === DÒNG CSS QUAN TRỌNG NHẤT === */
-    object-fit: cover; /* Lấp đầy khung chứa, giữ tỷ lệ và cắt phần thừa */
-    
-    /* Tùy chỉnh vị trí ảnh được ưu tiên hiển thị */
-    /* 'center center' là mặc định. Bạn có thể đổi thành 'center top' nếu mặt người ở trên cao */
+    object-fit: cover;
     object-position: center center; 
 }
 
-/* --- Nâng cấp Hero Section (Style "Cyber/Tech") --- */
-
-/* 1. Biến khối text thành một "Card" giống như của thành viên */
+/* --- Nâng cấp Hero Section --- */
 .hero-text {
-    background: var(--bg-card); /* Nền tối của card */
-    border: 1px solid var(--border-glow); /* Viền phát sáng */
-    border-radius: var(--border-radius); /* Bo góc đồng bộ */
-    padding: 2.5rem; /* Tăng khoảng đệm bên trong */
-    box-shadow: var(--glow-shadow); /* Đổ bóng phát sáng */
-    transition: var(--transition);
+    padding: 2.5rem;
+    text-align: left;
+    border-right: 1px solid var(--border-glow);
 }
 
 .hero-text:hover {
@@ -649,30 +654,46 @@ a {
     box-shadow: 0 0 35px rgba(0, 170, 255, 0.3);
 }
 
-/* 2. Giữ nguyên style gradient cho tiêu đề chính */
-.hero-title {
-    /* Không cần thay đổi, style cũ đã rất hợp */
-    margin-bottom: 1.5rem;
-}
-
-/* 3. Style cho danh sách các điểm mạnh */
+/* === CSS CHO CÁC ELEMENT "TRÔI NỔI" === */
 .hero-features-list {
+    position: absolute; 
+    bottom: 2rem;       
+    left: 2rem;         
     list-style: none;
     padding: 0;
-    margin: 2rem 0;
+    margin: 0;
+    display: flex;      
+    flex-wrap: wrap;    
+    gap: 1rem;          
 }
 
 .hero-features-list li {
-    color: var(--text-muted); /* Dùng màu text phụ cho đồng bộ */
+    background-color: rgba(17, 24, 39, 0.7); 
+    backdrop-filter: blur(10px); 
+    border: 1px solid var(--border-glow);
+    padding: 0.75rem 1.25rem;
+    border-radius: 50px; 
+    font-size: 0.9rem;
     font-weight: 500;
-    margin-bottom: 0.8rem;
-    font-size: 1.1rem;
+    color: var(--text-light);
     display: flex;
     align-items: center;
     gap: 0.75rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: var(--transition);
+
+    /* === THÊM 2 DÒNG NÀY VÀO === */
+    width: 15rem; /* MỚI: Đặt chiều rộng cố định (bạn có thể điều chỉnh giá trị này) */
+    justify-content: center; /* MỚI: Căn giữa nội dung (icon và text) */
 }
 
-/* 4. Style cho nút bấm mới, đồng bộ với nút "Submit" */
+.hero-features-list li:hover {
+    transform: translateY(-5px);
+    background-color: rgba(17, 24, 39, 0.9);
+    border-color: var(--accent-glow);
+    box-shadow: 0 8px 25px rgba(0, 170, 255, 0.3);
+}
+
 .cta-button {
     display: inline-block;
     padding: 0.9rem 2rem;
@@ -680,10 +701,12 @@ a {
     color: var(--bg-dark);
     font-weight: 700;
     font-size: 1rem;
-    border-radius: 8px; /* Bo góc vuông vắn hơn, hợp style tech */
+    border-radius: 8px;
     text-decoration: none;
     transition: var(--transition);
     border: none;
+    /* Thêm margin-top để tạo khoảng cách sau khi dời list đi */
+    margin-top: 2rem; 
 }
 
 .cta-button:hover {
@@ -691,10 +714,42 @@ a {
     box-shadow: 0 10px 30px rgba(0, 170, 255, 0.4);
 }
 
-/* Responsive: Đảo ngược thứ tự trên mobile để khối text hiện trước */
+/* --- Responsive cho Hero --- */
 @media (max-width: 992px) {
+    .hero-card {
+        grid-template-columns: 1fr; 
+    }
+}
+
+/* --- Responsive cho Hero --- */
+@media (max-width: 992px) {
+    .hero-card {
+        grid-template-columns: 1fr; 
+    }
+
     .hero-text {
-        order: -1; /* Đưa khối text lên trên ảnh */
-        margin-bottom: 2rem;
+        /* Khi xếp chồng, bỏ viền bên phải và thay bằng viền dưới để phân tách */
+        border-right: none;
+        border-bottom: 1px solid var(--border-glow);
+    }
+
+    .hero-image {
+        /* Đặt chiều cao tối thiểu để ảnh không bị mất hoặc quá nhỏ trên di động */
+        min-height: 450px;
+    }
+
+    .hero-features-list {
+        /* Điều chỉnh lại vị trí và bố cục của danh sách "lơ lửng" */
+        flex-direction: column; /* Xếp các mục theo chiều dọc */
+        align-items: center;    /* Căn giữa các mục */
+        width: 100%;            /* Chiếm toàn bộ chiều rộng của container ảnh */
+        left: 0;
+        bottom: 1.5rem;
+        padding: 0 1.5rem;      /* Thêm khoảng đệm hai bên */
+    }
+
+    .hero-features-list li {
+        width: 100%;            /* Các mục sẽ chiếm chiều rộng tối đa */
+        max-width: 320px;       /* Giới hạn lại để không quá dài */
     }
 }
