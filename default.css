@@ -117,6 +117,10 @@ a {
     width: 100%;
 }
 
+:target {
+  scroll-margin-top: 114px; /* khoảng cách muốn chừa phía trên */
+}
+
 /* --- Homepage Styles --- */
 .hero-section {
     padding: 6rem 0;
