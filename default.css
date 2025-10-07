@@ -122,18 +122,18 @@ a {
 }
 
 /* --- Homepage Styles --- */
-.hero-section {
+.tamka-section {
     padding: 6rem 0;
     background: linear-gradient(135deg, var(--bg-dark) 0%, #111e3b 100%);
     position: relative;
     overflow: hidden;
 }
 
-.hero-section .container {
+.tamka-section .container {
     max-width: 90%;
 }
 
-.hero-card {
+.tamka-card {
     display: grid;
     grid-template-columns: 1fr 1fr; 
     align-items: center;
@@ -145,16 +145,16 @@ a {
     transition: var(--transition);
 }
 
-.hero-card:hover {
+.tamka-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 25px 60px rgba(0, 170, 255, 0.3);
 }
 
-.hero-card:hover .hero-image img {
+.tamka-card:hover .tamka-image img {
     transform: scale(1.05);
 }
 
-.hero-text {
+.tamka-text {
     padding: 3rem;
     text-align: left;
     background-color: rgba(17, 24, 39, 0.6);
@@ -166,7 +166,7 @@ a {
     justify-content: center;
 }
 
-.hero-title {
+.tamka-title {
     font-size: 4rem;
     font-weight: 800;
     margin-bottom: 1rem;
@@ -176,7 +176,7 @@ a {
     animation: fadeInUp 0.8s ease-out;
 }
 
-.hero-subtitle {
+.tamka-subtitle {
     font-size: 1.25rem;
     color: var(--text-muted);
     max-width: 700px;
@@ -215,13 +215,13 @@ a {
     box-shadow: 0 10px 30px rgba(0, 170, 255, 0.4);
 }
 
-.hero-image {
+.tamka-image {
     width: 100%;
     position: relative;
     overflow: hidden; 
 }
 
-.hero-image img {
+.tamka-image img {
     display: block;
     width: 100%;
     height: auto;
@@ -230,7 +230,7 @@ a {
     transition: transform 0.4s ease-in-out;
 }
 
-.hero-features-list {
+.tamka-features-list {
     position: absolute; 
     bottom: 2rem;       
     left: 2rem;         
@@ -242,7 +242,7 @@ a {
     gap: 1rem;          
 }
 
-.hero-features-list li {
+.tamka-features-list li {
     background-color: rgba(17, 24, 39, 0.7); 
     backdrop-filter: blur(10px); 
     border: 1px solid var(--border-glow);
@@ -260,7 +260,7 @@ a {
     justify-content: center;
 }
 
-.hero-features-list li:hover {
+.tamka-features-list li:hover {
     transform: translateY(-5px);
     background-color: rgba(17, 24, 39, 0.9);
     border-color: var(--accent-glow);
@@ -371,7 +371,7 @@ a {
     transform: translateX(-5px);
 }
 
-.member-hero {
+.member-tamka {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -577,20 +577,20 @@ a {
 
 /* --- Responsive Design --- */
 @media (max-width: 992px) {
-    .hero-card {
+    .tamka-card {
         grid-template-columns: 1fr; 
     }
 
-    .hero-text {
+    .tamka-text {
         border-right: none;
         border-bottom: 1px solid var(--border-glow);
     }
 
-    .hero-image {
+    .tamka-image {
         min-height: 450px;
     }
 
-    .hero-features-list {
+    .tamka-features-list {
         flex-direction: column;
         align-items: center;
         width: 100%;
@@ -599,18 +599,18 @@ a {
         padding: 0 1.5rem;
     }
 
-    .hero-features-list li {
+    .tamka-features-list li {
         width: 100%;
         max-width: 320px;
     }
 }
 
 @media (max-width: 768px) {
-    .hero-title {
+    .tamka-title {
         font-size: 2.5rem;
     }
     
-    .hero-subtitle {
+    .tamka-subtitle {
         font-size: 1rem;
     }
     
@@ -731,18 +731,18 @@ a {
 
 /* Màn hình nhỏ (Tablet) */
 @media (max-width: 992px) {
-    .hero-card {
+    .tamka-card {
         grid-template-columns: 1fr; 
         align-items: stretch;
     }
 
-    .hero-text {
+    .tamka-text {
         height: auto; /* Giữ lại thay đổi từ lần trước */
         border-right: none;
         border-bottom: 1px solid var(--border-glow);
     }
     
-    .hero-features-list {
+    .tamka-features-list {
         flex-direction: column;
         align-items: center;
         width: 100%;
@@ -750,7 +750,7 @@ a {
         bottom: 1.5rem;
         padding: 0 1.5rem;
     }
-    .hero-features-list li {
+    .tamka-features-list li {
         width: 100%;
         max-width: 320px;
     }
@@ -773,8 +773,8 @@ a {
         padding: 0.75rem 1rem;
     }
 
-    .hero-title { font-size: 2.5rem; }
-    .hero-subtitle { font-size: 1rem; }
+    .tamka-title { font-size: 2.5rem; }
+    .tamka-subtitle { font-size: 1rem; }
     .member-name { font-size: 2.5rem; }
     .section-title { font-size: 2rem; }
     .team-grid { grid-template-columns: 1fr; }
@@ -784,7 +784,7 @@ a {
 }
 
 /* --- CSS CHO IMAGE MAP RESPONSIVE MỚI --- */
-.hero-image {
+.tamka-image {
     position: relative; /* Bắt buộc để các link con có thể định vị theo */
 }
 
