@@ -1,0 +1,700 @@
+:root {
+    --bg-dark: #0a0f1f; /* Nền xanh đen đậm */
+    --bg-card: #111827; /* Nền cho card */
+    --text-light: #f0f8ff; /* Màu chữ chính (trắng xanh) */
+    --text-muted: #94a3b8; /* Màu chữ phụ (xám xanh) */
+    --accent-glow: #00aaff; /* Màu xanh neon chính */
+    --accent-green: #39ff14; /* Màu xanh neon phụ */
+    --border-glow: rgba(0, 170, 255, 0.3); /* Màu viền phát sáng */
+    --glow-shadow: 0 0 15px rgba(0, 170, 255, 0.2); /* Hiệu ứng bóng đổ phát sáng */
+
+    --font-primary: 'Inter', 'Poppins', sans-serif;
+    --border-radius: 12px;
+    --transition: all 0.3s ease-in-out;
+}
+
+/* --- Thiết lập cơ bản --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-primary);
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* --- Header & Navigation --- */
+.main-header {
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: rgba(10, 15, 31, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border-glow);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-brand {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--text-light);
+    transition: var(--transition);
+}
+
+.nav-brand:hover {
+    color: var(--accent-glow);
+    text-shadow: 0 0 20px rgba(0, 170, 255, 0.5);
+}
+
+.nav-brand span {
+    color: var(--accent-glow);
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    gap: 2.5rem;
+}
+
+.nav-menu a {
+    font-weight: 500;
+    color: var(--text-muted);
+    transition: var(--transition);
+    position: relative;
+    padding-bottom: 5px;
+}
+
+.nav-menu a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--accent-glow);
+    transition: width 0.3s ease;
+}
+
+.nav-menu a:hover {
+    color: var(--accent-glow);
+}
+
+.nav-menu a:hover::after {
+    width: 100%;
+}
+
+/* --- Homepage Styles --- */
+.hero-section {
+    padding: 6rem 0 4rem;
+    text-align: center;
+}
+
+.hero-title {
+    font-size: 4rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    background: linear-gradient(90deg, var(--text-light), var(--accent-glow));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.hero-subtitle {
+    font-size: 1.25rem;
+    color: var(--text-muted);
+    max-width: 700px;
+    margin: 0 auto 3rem;
+    animation: fadeInUp 0.8s ease-out 0.2s backwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.image-map-container {
+    border: 2px solid var(--border-glow);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--glow-shadow);
+    margin: 0 auto;
+    max-width: 900px;
+    transition: var(--transition);
+    animation: fadeInUp 0.8s ease-out 0.4s backwards;
+}
+
+.image-map-container:hover {
+    box-shadow: 0 0 30px rgba(0, 170, 255, 0.4);
+    transform: translateY(-5px);
+}
+
+.image-map-container img {
+    width: 100%;
+    display: block;
+}
+
+/* --- Team Section --- */
+.team-section {
+    padding: 5rem 0;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 4rem;
+    background: linear-gradient(90deg, var(--text-light), var(--accent-glow));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2.5rem;
+    margin-top: 3rem;
+}
+
+.team-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-glow);
+    border-radius: var(--border-radius);
+    padding: 2.5rem 2rem;
+    text-align: center;
+    transition: var(--transition);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.team-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--accent-glow), var(--accent-green));
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.team-card:hover::before {
+    transform: scaleX(1);
+}
+
+.team-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 35px rgba(0, 170, 255, 0.4);
+    border-color: var(--accent-glow);
+}
+
+.team-card-avatar {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 1.5rem;
+    border: 4px solid var(--accent-glow);
+    box-shadow: var(--glow-shadow);
+    transition: var(--transition);
+}
+
+.team-card:hover .team-card-avatar {
+    transform: scale(1.1);
+    box-shadow: 0 0 30px rgba(0, 170, 255, 0.5);
+}
+
+.team-card-name {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--text-light);
+}
+
+.team-card-id {
+    color: var(--text-muted);
+    font-size: 1rem;
+}
+
+/* --- Member Detail Page Styles --- */
+.member-main {
+    padding: 3rem 0;
+}
+
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-muted);
+    margin-bottom: 3rem;
+    transition: var(--transition);
+    font-weight: 500;
+}
+
+.back-link:hover {
+    color: var(--accent-glow);
+    transform: translateX(-5px);
+}
+
+.member-hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 2rem;
+    margin-bottom: 5rem;
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.member-avatar {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--accent-glow);
+    box-shadow: var(--glow-shadow), 0 0 50px rgba(0, 170, 255, 0.3);
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.member-name {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+}
+
+.member-name span {
+    color: var(--accent-glow);
+}
+
+.member-role {
+    color: var(--text-muted);
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.member-bio {
+    max-width: 100%;
+    color: var(--text-muted);
+    line-height: 1.8;
+    margin-bottom: 2rem;
+}
+
+.social-links {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+    justify-content: center;
+}
+
+.social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-glow);
+    border-radius: 50%;
+    transition: var(--transition);
+}
+
+.social-links svg {
+    width: 24px;
+    height: 24px;
+    stroke: var(--text-muted);
+    transition: var(--transition);
+}
+
+.social-links a:hover {
+    background: var(--accent-glow);
+    border-color: var(--accent-glow);
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(0, 170, 255, 0.4);
+}
+
+.social-links a:hover svg {
+    stroke: var(--bg-dark);
+}
+
+/* --- Info Grid --- */
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    animation: fadeInUp 0.8s ease-out 0.3s backwards;
+}
+
+.info-card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-glow);
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    box-shadow: var(--glow-shadow);
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.info-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent-glow), var(--accent-green));
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.info-card:hover::before {
+    transform: scaleX(1);
+}
+
+.info-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 0 35px rgba(0, 170, 255, 0.3);
+}
+
+.card-title {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: var(--accent-glow);
+}
+
+.card-title svg {
+    width: 32px;
+    height: 32px;
+    stroke: var(--accent-glow);
+}
+
+.info-list {
+    list-style: none;
+    display: grid;
+    gap: 1.25rem;
+}
+
+.info-list li {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid rgba(148, 163, 184, 0.1);
+}
+
+.info-list li:last-child {
+    border-bottom: none;
+}
+
+.info-list span:first-child {
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+.info-list span:last-child {
+    color: var(--text-light);
+    font-weight: 600;
+}
+
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.skill-badge {
+    background: linear-gradient(135deg, rgba(0, 170, 255, 0.2), rgba(57, 255, 20, 0.1));
+    color: var(--text-light);
+    padding: 0.6rem 1.25rem;
+    border-radius: 20px;
+    font-weight: 500;
+    border: 1px solid var(--border-glow);
+    transition: var(--transition);
+}
+
+.skill-badge:hover {
+    background: var(--accent-glow);
+    color: var(--bg-dark);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 170, 255, 0.3);
+}
+
+/* --- Footer --- */
+.main-footer {
+    text-align: center;
+    padding: 3rem 0;
+    margin-top: 5rem;
+    border-top: 1px solid var(--border-glow);
+    color: var(--text-muted);
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+    
+    .member-name {
+        font-size: 2.5rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .nav-menu {
+        gap: 1.5rem;
+    }
+    
+    .team-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.contact-form-container {
+    max-width: 700px; /* Giới hạn chiều rộng của form */
+    margin: 0 auto; /* Tự động căn giữa */
+    background-color: #111827; /* Màu nền cho khối form */
+    padding: 4rem; /* Khoảng đệm bên trong */
+    border-radius: 20px; /* Bo góc */
+    border: 1px solid var(--border-glow);
+    box-shadow: var(--glow-shadow);
+}
+
+.contact-pre-title {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 0.5rem;
+}
+
+.contact-title {
+    font-size: 3.5rem; /* Có thể điều chỉnh kích thước */
+    font-weight: 800;
+    color: var(--text-light);
+    margin-bottom: 2.5rem;
+}
+
+/* Style cho form bên trong khối */
+.new-contact-form .form-group {
+    margin-bottom: 2rem;
+}
+
+.new-contact-form .form-group label {
+    display: block;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--text-light);
+    margin-bottom: 0.75rem;
+}
+
+.new-contact-form .form-group input,
+.new-contact-form .form-group textarea {
+    width: 100%;
+    background-color: #192133; /* Màu nền input đậm hơn */
+    border: none;
+    border-radius: 10px;
+    padding: 1.25rem;
+    color: var(--text-light);
+    font-family: var(--font-primary);
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+.new-contact-form .form-group input::placeholder,
+.new-contact-form .form-group textarea::placeholder {
+    color: #6b7280; /* Màu placeholder hơi xám */
+}
+
+.new-contact-form .form-group input:focus,
+.new-contact-form .form-group textarea:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--accent-glow); /* Hiệu ứng focus */
+}
+
+.submit-btn-v2 {
+    width: auto;
+    background: var(--text-light);
+    color: var(--bg-dark);
+    padding: 0.9rem 2.5rem;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    transition: var(--transition);
+    margin-top: 1rem;
+}
+
+.submit-btn-v2:hover {
+    background: #cdd4da;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .contact-form-container {
+        padding: 2.5rem;
+    }
+
+    .contact-title {
+        font-size: 2.5rem;
+    }
+}
+
+/* --- CSS cho Hero Image kích thước lớn --- */
+
+/* 1. Tạo một khung chứa (container) cho ảnh */
+.hero-image {
+    width: 100%;
+    /* Thiết lập chiều cao tương đối theo chiều rộng (ví dụ: tỷ lệ 16:9) */
+    /* padding-top: 56.25%; /* (9 / 16 * 100) */
+    /* Hoặc đặt một chiều cao cố định và responsive */
+    height: 60vh; /* Cao bằng 60% chiều cao màn hình */
+    max-height: 500px; /* Chiều cao tối đa, tránh quá cao trên màn hình dài */
+    position: relative;
+    border-radius: var(--border-radius);
+    overflow: hidden; /* Quan trọng: Ẩn các phần ảnh bị thừa */
+    box-shadow: var(--glow-shadow);
+    border: 2px solid var(--border-glow);
+}
+
+/* 2. Style cho thẻ <img> bên trong khung chứa */
+.hero-image img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    /* === DÒNG CSS QUAN TRỌNG NHẤT === */
+    object-fit: cover; /* Lấp đầy khung chứa, giữ tỷ lệ và cắt phần thừa */
+    
+    /* Tùy chỉnh vị trí ảnh được ưu tiên hiển thị */
+    /* 'center center' là mặc định. Bạn có thể đổi thành 'center top' nếu mặt người ở trên cao */
+    object-position: center center; 
+}
+
+/* --- Nâng cấp Hero Section (Style "Cyber/Tech") --- */
+
+/* 1. Biến khối text thành một "Card" giống như của thành viên */
+.hero-text {
+    background: var(--bg-card); /* Nền tối của card */
+    border: 1px solid var(--border-glow); /* Viền phát sáng */
+    border-radius: var(--border-radius); /* Bo góc đồng bộ */
+    padding: 2.5rem; /* Tăng khoảng đệm bên trong */
+    box-shadow: var(--glow-shadow); /* Đổ bóng phát sáng */
+    transition: var(--transition);
+}
+
+.hero-text:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 35px rgba(0, 170, 255, 0.3);
+}
+
+/* 2. Giữ nguyên style gradient cho tiêu đề chính */
+.hero-title {
+    /* Không cần thay đổi, style cũ đã rất hợp */
+    margin-bottom: 1.5rem;
+}
+
+/* 3. Style cho danh sách các điểm mạnh */
+.hero-features-list {
+    list-style: none;
+    padding: 0;
+    margin: 2rem 0;
+}
+
+.hero-features-list li {
+    color: var(--text-muted); /* Dùng màu text phụ cho đồng bộ */
+    font-weight: 500;
+    margin-bottom: 0.8rem;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+/* 4. Style cho nút bấm mới, đồng bộ với nút "Submit" */
+.cta-button {
+    display: inline-block;
+    padding: 0.9rem 2rem;
+    background: linear-gradient(135deg, var(--accent-glow), var(--accent-green));
+    color: var(--bg-dark);
+    font-weight: 700;
+    font-size: 1rem;
+    border-radius: 8px; /* Bo góc vuông vắn hơn, hợp style tech */
+    text-decoration: none;
+    transition: var(--transition);
+    border: none;
+}
+
+.cta-button:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(0, 170, 255, 0.4);
+}
+
+/* Responsive: Đảo ngược thứ tự trên mobile để khối text hiện trước */
+@media (max-width: 992px) {
+    .hero-text {
+        order: -1; /* Đưa khối text lên trên ảnh */
+        margin-bottom: 2rem;
+    }
+}

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TamKaOnBar - Portfolio Nhóm</title>
+    <link rel="stylesheet" href="default.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="main-header">
+        <div class="container navbar">
+            <!-- Menu bên trái -->
+            <ul class="nav-menu">
+                <li><a href="#hero" class="active">Trang chủ</a></li>
+                <li><a href="#team">Members</a></li>
+            </ul>
+            <!-- Logo ở giữa -->
+            <a href="index.html" class="nav-brand">
+                <span>TamKaOnBar</span>
+            </a>
+            <!-- Menu bên phải -->
+            <ul class="nav-menu">
+                <li><a href="#about">About us</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <!-- HERO SECTION (PHIÊN BẢN HỢP NHẤT) -->
+        <section id="hero" class="hero-section">
+            <div class="container">
+                <!-- Một card duy nhất chứa cả ảnh và text -->
+                <div class="hero-card">
+                    <!-- Cột ảnh bên trong card -->
+                    <div class="hero-image">
+                        <img src="assets/images/group.jpg" alt="Ảnh nhóm TamKaOnBar" usemap="#team-map">
+                        <map name="team-map">
+                            <area shape="rect" coords="50,100,250,400" href="members/23120255/profile.html" alt="Thành viên 1">
+                            <area shape="rect" coords="300,100,500,400" href="members/23120262/profile.html" alt="Thành viên 2">
+                            <area shape="rect" coords="550,100,750,400" href="members/23120264/profile.html" alt="Thành viên 3">
+                        </map>
+                    </div>
+
+                    <!-- Cột text bên trong card -->
+                    <div class="hero-text">
+                        <h1 class="hero-title">Điều hướng thế giới số để thành công</h1>
+                        <p class="hero-subtitle">Chúng tôi là TamKaOnBar, một nhóm sinh viên đam mê công nghệ, biến ý tưởng thành sản phẩm web sáng tạo và hiệu quả.</p>
+                        
+                        <ul class="hero-features-list">
+                            <li>💡 Sáng tạo & Hiệu quả</li>
+                            <li>🤝 Hợp tác & Hỗ trợ</li>
+                            <li>🚀 Luôn học hỏi & Phát triển</li>
+                        </ul>
+
+                        <a href="#team" class="cta-button">Gặp gỡ thành viên</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT US SECTION -->
+        <section id="about" class="section about-section">
+            <div class="container about-content">
+                <div class="about-intro">
+                    <h2 class="section-title">Về chúng tôi</h2>
+                    <p>TamKaOnBar được thành lập từ những sinh viên cùng chung đam mê với lập trình web. Chúng tôi tin rằng sức mạnh của tập thể và sự sáng tạo không giới hạn sẽ tạo ra những sản phẩm kỹ thuật số đột phá.</p>
+                </div>
+                <div class="about-cards">
+                    <div class="about-card">
+                        <div class="about-card-icon">🎯</div>
+                        <h3>Sứ mệnh</h3>
+                        <p>Mang đến những giải pháp web hiện đại, tối ưu hóa trải nghiệm người dùng và đáp ứng chính xác nhu cầu của dự án thông qua việc áp dụng các công nghệ mới nhất.</p>
+                    </div>
+                    <div class="about-card">
+                        <div class="about-card-icon">👁️</div>
+                        <h3>Tầm nhìn</h3>
+                        <p>Trở thành một nhóm phát triển web được công nhận bởi sự chuyên nghiệp, sáng tạo và chất lượng sản phẩm, góp phần vào sự phát triển của cộng đồng công nghệ.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TEAM SECTION -->
+        <section id="team" class="section">
+            <div class="container">
+                <h2 class="section-title">Gặp gỡ các thành viên</h2>
+                <div class="team-grid">
+                    <!-- Card thành viên 1 -->
+                    <a href="members/23120255/profile.html" class="team-card">
+                        <img src="./members/23120255/img/23120262.jpg" alt="Tống Dương Thái Hòa" class="team-card-avatar">
+                        <h3 class="team-card-name">Tống Dương Thái Hòa</h3>
+                        <p class="team-card-id">MSSV: 23120255</p>
+                        <p class="member-bio">meo meo meo</p>
+                    </a>
+                    <!-- Card thành viên 2 -->
+                    <a href="members/23120262/profile.html" class="team-card">
+                        <img src="./members/23120262/img/23120262.jpg" alt="Tống Dương Thái Hòa" class="team-card-avatar">
+                        <h3 class="team-card-name">Tống Dương Thái Hòa</h3>
+                        <p class="team-card-id">MSSV: 23120262</p>
+                        <p class="member-bio">meo meo meo</p>
+                    </a>
+                    <!-- Card thành viên 3 -->
+                    <a href="members/23120264/profile.html" class="team-card">
+                        <img src="./members/23120264/img/23120262.jpg" alt="Tống Dương Thái Hòa" class="team-card-avatar">
+                        <h3 class="team-card-name">Tống Dương Thái Hòa</h3>
+                        <p class="team-card-id">MSSV: 23120264</p>
+                        <p class="member-bio">meo meo meo</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT SECTION -->
+        <section id="contact" class="section contact-section-v2">
+            <div class="container">
+                <!-- Container cho form để giới hạn chiều rộng và căn giữa -->
+                <div class="contact-form-container">
+                    <h2 class="contact-title">Contact</h2>
+
+                    <form action="#" method="POST" class="new-contact-form">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" name="name" placeholder="What's your name?" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Your Email</label>
+                            <input type="email" id="email" name="email" placeholder="What's your email?" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <textarea id="message" name="message" rows="5" placeholder="What do you want to say?" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn-v2">Send</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="main-footer">
+        <p>&copy; 2025 - Bài tập Phát triển ứng dụng Web - Nhóm TamKaOnBar</p>
+    </footer>
+</body>
+</html>
