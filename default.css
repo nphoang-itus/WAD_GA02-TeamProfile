@@ -10,7 +10,8 @@
 
     /* Cập nhật font và các biến khác để mượt mà hơn */
     --font-heading: 'Oswald', sans-serif; 
-    --font-body: 'Roboto', sans-serif;   
+    --font-body: 'Roboto', sans-serif;
+    --font-primary: 'Poppins', sans-serif;
     --border-radius: 12px;
     --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); /* Transition mượt hơn */
 }
