@@ -166,7 +166,7 @@
             }
 
             const subject = `Tin nhắn từ Portfolio của ${name}`;
-            const body = `Chào ${recipientName},%0D%0A%0D%0ABạn có một tin nhắn mới từ trang portfolio của nhóm:%0D%0A%0D%0A---%0D%0A${message}%0D%0A---%0D%0A%0D%0AGửi từ:%0D%0ATên: ${name}%0D%0AEmail: ${email}`;
+            const body = `Chào ${recipientName}, bạn có một tin nhắn mới từ trang portfolio của nhóm: \n${message}\nGửi từ:\n\t- Tên: ${name}\n\t- Email: ${email}`;
             const mailtoLink = `mailto:${recipientEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
             window.location.href = mailtoLink;
         }
