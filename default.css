@@ -280,7 +280,7 @@ a {
 
 .team-card-id {
     color: var(--accent-glow); /* Đổi màu cho nổi bật */
-    font-size: 1rem;
+    font-size: 1.3rem;
     font-weight: 500;
     margin-bottom: 1rem;
 }
