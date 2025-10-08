@@ -8,123 +8,78 @@
     <link rel="stylesheet" href="default.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" 
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" 
     rel="stylesheet">
 </head>
 <body>
     <header class="main-header">
-        <div class="container">
-            <!-- MỚI: Toàn bộ thanh điều hướng giờ nằm trong một list duy nhất -->
+        <nav class="container">
             <ul class="navbar">
-                <!-- Các link bên trái -->
-                <li><a href="#tamka" class="active">Trang chủ</a></li>
-                <li><a href="#team">Members</a></li>
-
-                <!-- Logo ở giữa, đặt trong một li đặc biệt -->
+                <li><a href="#tamka">Trang chủ</a></li>
+                <li><a href="#team">Thành viên</a></li>
                 <li class="nav-brand-li">
                     <a href="index.html" class="nav-brand">
                         <span>TamKaOnBar</span>
                     </a>
                 </li>
-
-                <!-- Các link bên phải -->
-                <li><a href="#about">About us</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#about">Về chúng tôi</a></li>
+                <li><a href="#contact">Liên hệ</a></li>
             </ul>
-        </div>
+        </nav>
     </header>
 
     <main>
-        <!-- tamka SECTION (PHIÊN BẢN HỢP NHẤT) -->
         <section id="tamka" class="tamka-section">
             <div class="container">
-                <!-- Card chứa layout 2 cột: text bên trái, ảnh bên phải -->
                 <div class="tamka-card">
-                    <!-- Cột text bên trong card -->
                     <div class="tamka-text">
                         <h1 class="tamka-title">Điều hướng thế giới số để thành công</h1>
                         <p class="tamka-subtitle">Chúng tôi là TamKaOnBar, một nhóm sinh viên đam mê công nghệ, 
                             biến ý tưởng thành sản phẩm web sáng tạo và hiệu quả.</p>
-                        
-                        <!-- DANH SÁCH ĐÃ ĐƯỢC DỜI ĐI -->
-
                         <a href="#team" class="cta-button">Gặp gỡ thành viên</a>
                     </div>
                     
-                    <!-- Cột ảnh bên trong card -->
                     <div class="tamka-image">
-                        <img src="assets/images/group.jpg" alt="Ảnh nhóm TamKaOnBar" usemap="#team-map">
-                        
-                        <!-- MỚI: Các vùng link được đặt trực tiếp ở đây -->
-                         <map name="team-map">
-                            <area target="_self" alt="Hồ sơ của Nguyễn Phúc Hoàng" 
-                            title="Xem hồ sơ của Nguyễn Phúc Hoàng" href="members/23120264/profile.html" 
-                            coords="332,448,372,412,387,344,381,273,330,232,264,235,222,295,220,385,279,436" 
-                            shape="poly">
+                        <div class="tamka-image-container">
+                            <img src="assets/images/group.jpg" alt="Ảnh nhóm TamKaOnBar" class="group-photo-main">
                             
-                            <area target="_self" alt="Hồ sơ của Tống Dương Thái Hòa" 
-                            title="Xem hồ sơ của Tống Dương Thái Hòa" href="members/23120262/profile.html" 
-                            coords="600,525,643,513,659,472,672,469,678,437,679,358,619,316,551,324,512,375,515,432,520,465,537,472,549,508" 
-                            shape="poly">
-
-                            <area target="_self" alt="Xem hồ sơ của Lê Tấn Hiệp" 
-                            title="Xem hồ sơ của Lê Tấn Hiệp" href="members/23120255/profile.html" 
-                            coords="887,473,945,429,943,412,958,405,966,356,958,349,965,288,949,262,889,236,822,253,791,293,804,361,813,410,833,453" 
-                            shape="poly">
-                        </map>
-                    </div>
-
-                </div>
-
-            </div>
-        </section>
-
-        <!-- ABOUT US SECTION -->
-        <section id="about" class="section about-section">
-            <div class="container about-content">
-                <div class="about-intro">
-                    <h2 class="section-title">Về chúng tôi</h2>
-                    <p>TamKaOnBar được thành lập từ những sinh viên cùng chung đam mê với lập trình web. 
-                        Chúng tôi tin rằng sức mạnh của tập thể và sự sáng tạo không giới hạn sẽ tạo ra những sản phẩm kỹ thuật số đột phá.</p>
-                </div>
-                <div class="about-cards">
-                    <div class="about-card">
-                        <div class="about-card-icon">🎯</div>
-                        <h3>Sứ mệnh</h3>
-                        <p>Mang đến những giải pháp web hiện đại, 
-                            tối ưu hóa trải nghiệm người dùng và đáp ứng chính xác nhu cầu của dự án thông qua việc áp dụng các công nghệ mới nhất.</p>
-                    </div>
-                    <div class="about-card">
-                        <div class="about-card-icon">👁️</div>
-                        <h3>Tầm nhìn</h3>
-                        <p>Trở thành một nhóm phát triển web được công nhận bởi sự chuyên nghiệp, 
-                            sáng tạo và chất lượng sản phẩm, góp phần vào sự phát triển của cộng đồng công nghệ.</p>
+                            <a href="members/23120264/profile.html" 
+                               title="Xem hồ sơ của Nguyễn Phúc Hoàng" 
+                               class="member-link" 
+                               id="hoang-link"></a>
+                            
+                            <a href="members/23120262/profile.html" 
+                               title="Xem hồ sơ của Tống Dương Thái Hòa" 
+                               class="member-link" 
+                               id="hoa-link"></a>
+                               
+                            <a href="members/23120255/profile.html" 
+                               title="Xem hồ sơ của Lê Tấn Hiệp" 
+                               class="member-link" 
+                               id="hiep-link"></a>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- TEAM SECTION -->
-        <section id="team" class="section">
+        <section id="team">
             <div class="container">
                 <h2 class="section-title">Gặp gỡ các thành viên</h2>
                 <div class="team-grid">
-                    <!-- Card thành viên 1 -->
                     <a href="members/23120255/profile.html" class="team-card">
-                        <img src="./members/23120255/img/23120255.jpg" alt="Lê Tấn Hiệp" 
-                        class="team-card-avatar">
+                        <img src="./members/23120255/img/23120255.jpg" alt="Lê Tấn Hiệp" class="team-card-avatar">
                         <h3 class="team-card-name">Lê Tấn Hiệp</h3>
                         <p class="team-card-id">MSSV: 23120255</p>
-                        <p class="member-bio">Đam mê lập trình thi đấu cũng như các công nghệ phần mềm.</p>
+                        <p class="member-bio">Đam mê lập trình thi đấu và có mong muốn phát triển các công nghệ phần mềm tiên tiến.</p>
                     </a>
-                    <!-- Card thành viên 2 -->
                     <a href="members/23120262/profile.html" class="team-card">
-                        <img src="./members/23120262/img/23120262.jpg" alt="Tống Dương Thái Hòa" 
-                        class="team-card-avatar">
+                        <img src="./members/23120262/img/23120262.jpg" alt="Tống Dương Thái Hòa" class="team-card-avatar">
                         <h3 class="team-card-name">Tống Dương Thái Hòa</h3>
                         <p class="team-card-id">MSSV: 23120262</p>
-                        <p class="member-bio">meo meo meo</p>
+                        <p class="member-bio">Chỉ muốn làm con mèo nhưng đời đẩy đưa vào con đường công nghệ phần mềm.😸</p>
                     </a>
+                    
                     <!-- Card thành viên 3 -->
                     <a href="members/23120264/profile.html" class="team-card">
                         <img src="./members/23120264/img/23120264.jpg" alt="Nguyễn Phúc Hoàng" class="team-card-avatar">
@@ -136,87 +91,85 @@
             </div>
         </section>
 
-        <!-- CONTACT SECTION -->
-        <section id="contact" class="section contact-section-v2">
+        <!-- ABOUT US SECTION -->
+        <section id="about" class="section about-section">
             <div class="container">
-                <!-- Container cho form để giới hạn chiều rộng và căn giữa -->
+                <div class="about-intro">
+                    <h2 class="section-title">Về "Gánh Xiếc" TamKaOnBar</h2>
+                    <p class="about-subtitle">
+                        Nơi hội tụ của ba kẻ 'hành nghề' sinh viên, bị vũ trụ 'dí' lại với nhau bởi deadline và một tình yêu bất diệt... dành cho bug. 
+                        Chúng tôi tin rằng với đủ lượng cà phê và một chút phép màu từ Stack Overflow (và những người bạn AI 🤖), không có trang web hay "sọt que" nào là không thể.
+                    </p>
+                </div>
+                <div class="about-cards">
+                    <div class="about-card">
+                        <div class="about-card-icon">🚀</div>
+                        <h3>Sứ mệnh "Tối Thượng"</h3>
+                        <p>Biến cà phê và những đêm không ngủ thành những dòng code 'chạy được'. Mục tiêu cuối cùng là mang lại nụ cười cho khách hàng và giữ cho số bug ít hơn số feature.</p>
+                    </div>
+                    <div class="about-card">
+                        <div class="about-card-icon">😎</div>
+                        <h3>Tầm nhìn "Vĩ Đại"</h3>
+                        <p>Hướng tới việc code mà không cần nhìn Google, tự tin giải thích cho khách hàng tại sao nút bấm 'làm cho nó đẹp hơn' không tồn tại, và quan trọng nhất là... tốt nghiệp đúng hạn.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section">
+            <div class="container">
                 <div class="contact-form-container">
                     <h2 class="contact-title">Liên hệ với chúng tôi</h2>
-
                     <form id="portfolio-contact-form" class="new-contact-form">
                         <div class="form-group">
                             <label for="name">Tên của bạn</label>
-                            <input type="text" id="name" name="name" placeholder="Bạn tên là gì?" required>
+                            <input type="text" id="name" name="name" placeholder="Ví dụ: Nguyễn Văn A" required>
                         </div>
                         <div class="form-group">
                             <label for="email">Email của bạn</label>
-                            <input type="email" id="email" name="email" placeholder="Email để chúng tôi liên lạc lại?" required>
+                            <input type="email" id="email" name="email" placeholder="via_email@example.com" required>
                         </div>
                         <div class="form-group">
                             <label for="message">Lời nhắn</label>
                             <textarea id="message" name="message" rows="5" placeholder="Bạn muốn nói gì với chúng tôi?" required></textarea>
                         </div>
-                        
-                        <!-- MỚI: Nhóm các nút gửi mail -->
                         <div class="form-group">
                             <label>Gửi đến:</label>
                             <div class="contact-button-group">
-                                <!-- Nút cho thành viên 1 -->
-                                <button type="button" class="contact-send-btn" 
-                                onclick="sendEmail('23120255@student.hcmus.edu.vn', 'Lê Tấn Hiệp')">
-                                    Hịp
-                                </button>
-                                <!-- Nút cho thành viên 2 (Thay email và tên thật) -->
-                                <button type="button" class="contact-send-btn" 
-                                onclick="sendEmail('23120262@student.hcmus.edu.vn', 'Tống Dương Thái Hòa')">
-                                    Tống Dương Thái Hòa
-                                </button>
-                                <!-- Nút cho thành viên 3 (Thay email và tên thật) -->
-                                <button type="button" class="contact-send-btn" onclick="sendEmail('23120264@student.hcmus.edu.vn', 'Nguyễn Phúc Hoàng')">
-                                    Nguyễn Phúc Hoàng
-                                </button>
+                                <button type="button" class="contact-send-btn" onclick="sendEmail('23120255@student.hcmus.edu.vn', 'Lê Tấn Hiệp')">Lê Tấn Hiệp</button>
+                                <button type="button" class="contact-send-btn" onclick="sendEmail('23120264@student.hcmus.edu.vn', 'Nguyễn Phúc Hoàng')">Nguyễn Phúc Hoàng</button>
+                                <button type="button" class="contact-send-btn" onclick="sendEmail('23120262@student.hcmus.edu.vn', 'Tống Dương Thái Hòa')">Tống Dương Thái Hòa</button>
                             </div>
                         </div>
                     </form>
                 </div>
             </div>
         </section>
-
     </main>
 
+    <footer class="main-footer">
+        <p>&copy; 2025 - Bài tập Phát triển ứng dụng Web - Nhóm TamKaOnBar</p>
     </footer>
 
-    <!-- Thư viện Image Map Resizer (giữ nguyên) -->
     <script src="https://cdn.jsdelivr.net/npm/image-map-resizer@1.0.10/js/imageMapResizer.min.js"></script>
     <script>
         imageMapResize();
-    </script>
-    
-    <!-- === MỚI: JAVASCRIPT CHO FORM LIÊN HỆ === -->
-    <script>
+        
         function sendEmail(recipientEmail, recipientName) {
-            // Lấy các giá trị từ form
             const name = document.getElementById('name').value.trim();
             const email = document.getElementById('email').value.trim();
             const message = document.getElementById('message').value.trim();
 
-            // Kiểm tra xem các trường có được điền đầy đủ không
             if (!name || !email || !message) {
                 alert('Vui lòng điền đầy đủ thông tin vào form!');
-                return; // Dừng hàm nếu form chưa hoàn chỉnh
+                return;
             }
 
-            // Tạo tiêu đề và nội dung email
             const subject = `Tin nhắn từ Portfolio của ${name}`;
             const body = `Chào ${recipientName},%0D%0A%0D%0ABạn có một tin nhắn mới từ trang portfolio của nhóm:%0D%0A%0D%0A---%0D%0A${message}%0D%0A---%0D%0A%0D%0AGửi từ:%0D%0ATên: ${name}%0D%0AEmail: ${email}`;
-
-            // Tạo và mở liên kết mailto:
             const mailtoLink = `mailto:${recipientEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-            
-            // Mở ứng dụng mail mặc định của người dùng
             window.location.href = mailtoLink;
         }
     </script>
-    
 </body>
 </html>
