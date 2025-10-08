@@ -9,7 +9,7 @@
     --glow-shadow: 0 0 20px rgba(0, 170, 255, 0.15); /* Hiệu ứng bóng đổ phát sáng tinh tế hơn */
     --font-heading: 'Oswald', sans-serif; 
     --font-body: 'Roboto', sans-serif;
-    --font-primary: 'Poppins', sans-serif;
+    --font-primary: 'Lexend', sans-serif;
     --border-radius: 12px;
     --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); /* Transition mượt hơn */
 }
