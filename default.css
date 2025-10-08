@@ -7,8 +7,6 @@
     --accent-green: #39ff14; /* Màu xanh neon phụ */
     --border-glow: rgba(0, 170, 255, 0.3); /* Màu viền phát sáng */
     --glow-shadow: 0 0 20px rgba(0, 170, 255, 0.15); /* Hiệu ứng bóng đổ phát sáng tinh tế hơn */
-
-    /* Cập nhật font và các biến khác để mượt mà hơn */
     --font-heading: 'Oswald', sans-serif; 
     --font-body: 'Roboto', sans-serif;
     --font-primary: 'Poppins', sans-serif;
@@ -160,6 +158,7 @@ a {
 }
 
 .tamka-title {
+    font-family: var(--font-primary);
     font-size: 3.5rem; /* Điều chỉnh size chữ */
     font-weight: 800;
     line-height: 1.2;
